@@ -51,41 +51,27 @@ public class PrintClass {
 	
 	
 	public void orderPrint(){
-		InputClass ls = new InputClass();
 		System.out.println("\n티켓 발권을 종료합니다. 감사합니다.\n\n");
 		System.out.println("========================폴리 랜드=========================\n");
-		for(OrderList order : ls.data){
-			if(order.getTicketSelect() == 1) {
-				if(order.getAgeGroup() == 1) {
-					System.out.printf("주간권 유아   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 2) {
-					System.out.printf("주간권 소인   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 3) {
-					System.out.printf("주간권 청소년 x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 4) {
-					System.out.printf("주간권 대인   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 5) {
-					System.out.printf("주간권 경로   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} 
-			} else {
-				if(order.getAgeGroup() == 1) {
-					System.out.printf("야간권 유아   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 2) {
-					System.out.printf("야간권 소인   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 3) {
-					System.out.printf("야간권 청소년 x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 4) {
-					System.out.printf("야간권 대인   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} else if (order.getAgeGroup() == 5) {
-					System.out.printf("야간권 경로   x %d\t %d원\t", order.getOrderCount(), order.getTotalPrice());
-				} 
-			}
+		for(OrderList order : InputClass.data){
+			if(order.getTicketSelect() == 1) System.out.print("주간권 ");
+			else System.out.printf("야간권 ");
+			
+			if(order.getAgeGroup() == 1) System.out.print("유아    ");
+			else if(order.getAgeGroup() == 2) System.out.print("소인    ");
+			else if(order.getAgeGroup() == 3) System.out.print("청소년  ");
+			else if(order.getAgeGroup() == 4) System.out.print("대인    ");
+			else if(order.getAgeGroup() == 5) System.out.print("경로    ");
+	
+			System.out.printf("x %d\t%d원\t", order.getOrderCount(), order.getTotalPrice());
+						
 			String gender = order.getCustomerIDNumber().substring(7,8);
 			if(gender.equals("1") || gender.equals("3") || gender.equals("5") || gender.equals("7")) {
 				System.out.print("남성\t");
 			} else {
 				System.out.print("여성\t");
 			}
+			
 			if(order.getDiscountSelect() == 1) System.out.println("* 우대적용 없음");
 			else if (order.getDiscountSelect() == 2) System.out.println("* 장애인 우대적용");
 			else if (order.getDiscountSelect() == 3) System.out.println("* 국가유공자 우대적용");
