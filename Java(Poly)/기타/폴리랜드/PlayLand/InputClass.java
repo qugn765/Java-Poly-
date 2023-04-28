@@ -9,7 +9,14 @@ public class InputClass {
 	private PrintClass printout = new PrintClass();
 
 	static List<OrderList> data = new ArrayList<OrderList>();
-
+	
+	public int SelectLanguage() {
+		System.out.println("1.한국어  2.English");
+		int language_number = scanner.nextInt();
+		
+		return language_number;
+	}
+	
 	public int inputTicketSelect(){
 		int ticketSelect = 0;
 		while(true) {
@@ -58,8 +65,9 @@ public class InputClass {
 		return discountSelect;
 	}
 	
-	public void inputData(int ticketSelect, int ageGroup, int orderCount, int discountSelect, int totalPrice, String customerIDNumber) {
+	public void inputData(String nowDate, int ticketSelect, int ageGroup, int orderCount, int discountSelect, int totalPrice, String customerIDNumber) {
 		OrderList order = new OrderList();
+		order.setnowDate(nowDate);
 		order.setTicketSelect(ticketSelect);
 		order.setAgeGroup(ageGroup);
 		order.setOrderCount(orderCount);

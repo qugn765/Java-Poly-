@@ -2,6 +2,7 @@ package PlayLand;
 
 public class OrderList {
 	
+	private String nowDate;
 	private int ticketSelect;
 	private int ageGroup;
 	private int orderCount;
@@ -9,6 +10,12 @@ public class OrderList {
 	private int totalPrice; 
 	private String customerIDNumber;
 	
+	public String getNowDate() {
+		return nowDate;
+	}
+	public void setnowDate(String nowDate) {
+		this.nowDate = nowDate;
+	}
 	
 	public int getTicketSelect() {
 		return ticketSelect;

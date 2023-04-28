@@ -1,34 +1,23 @@
 package PlayLand;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class PlayLandMain {
 
-	public static void main(String[] args) {
-		PrintClass print = new PrintClass();
-		InputClass inputClass = new InputClass();
-		ageCalc age = new ageCalc();
-		priceCalc pricec = new priceCalc();
-		
-		int ticketSelect, orderCount, discountSelect, price, ageGroup, totalPrice;
-		String customerIDNumber;
-		int cNumber = 1;
-		while(cNumber == 1){
-			ticketSelect = inputClass.inputTicketSelect();
-			customerIDNumber = inputClass.inputCustomerIDNumber();
-			orderCount = inputClass.inputOrderCount();
-			discountSelect = inputClass.inputDiscountSelect();
-			
-			ageGroup = age.calcAgeGroup(age.calcAge(customerIDNumber));
-			price = pricec.calcPriceProcess(ageGroup, ticketSelect);
-			price = pricec.calcDiscount(price, discountSelect);
-			totalPrice = pricec.calcPriceResult(price, orderCount);
-			inputClass.inputData(ticketSelect, ageGroup, orderCount, discountSelect, totalPrice, customerIDNumber);
-			cNumber = print.printContinue();
+	public static void main(String[] args) throws IOException {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("1. 티켓발급   2. 데이터통계");
+		int inputNumber = scanner.nextInt();
+		if(inputNumber == 1) {
+			TicketMachine.Ticket();
+		} else if (inputNumber == 2) {
+			TicketData.TicketDataPrint();
 		}
-		
-		print.orderPrint();
-		
 	}
 
 }
