@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배치</title>
+    <style>
+        div{
+            display:inline-block;
+            height:50px;
+            width:50px;
+            border:1px solid lightgray;
+            text-align:center;
+            color:white;
+            background:red;
+        }
+        #down:hover{
+            position:relative;
+            left:20px;
+            top:20px;
+            background:green;
+        }
+        #up:hover{
+            position:relative;
+            right:20px;
+            bottom:20px;
+            background:green;
+        }
+        /*마우스를 가져다 올렸을때 down은 오른쪽 20px 아래로 20px움직이고
+        초록색으로 변하고
+        up은 위로20px 왼쪽으로 20px움직이면서 초록색으로 변함
+        기본 div는 빨간색이고 위에 div형태를 가짐*/
+    </style>
+</head>
+<body>
+    <h3>상대 배치, relative</h3>
+    <hr>
+    <div>T</div>
+    <div id="down">h</div>
+    <!--#down아이디를 가져다 쓰고 hover는 마우스를 가져다 올렸을때 형태-->
+    <div>a</div>
+    <div>n</div>
+    <div id="up">k</div>
+    <!--#up아이디를 가져다 쓰고 hover는 마우스를 가져다 올렸을때 형태-->
+    <div>s</div>
+</body>
+</html>

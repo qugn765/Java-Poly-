@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 합치기 및 오버라이딩</title>
+    <link type="text/css" rel="stylesheet" href="external.css">
+    <!--링크로 style불러오기-->
+    <style>
+        p {color:blue; font-size:12px;}
+        /* 스타일 선언해주기 */
+    </style>
+</head>
+<body>
+    <h3>p 태그에 중첩된 스타일</h3> <!--중첩되었을때 우선순위 확인-->
+    <hr>
+    <p>Hello, students!</p><!--중첩되었을때 우선순위 확인-->
+    <p style="font-size:25px">안녕하세요교수님!</p><!--중첩되었을때 우선순위 확인-->
+</body>
+</html>
+<!--style이 중첩되었을때 우선순위는
+1.<p style=> 과같이 직접 선언하는것
+2.해당html에서 <style>....</style>에 지정하는 것
+3.external.css와 같이 불러오는 style
+4. 브라워의 디폴트 스타일-->

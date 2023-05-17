@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>절대 배치</title>
+    <style>
+        div{
+            display:inline-block;
+            position:absolute; /*절대 배치*/
+            border:1px solid lightgray;
+        }
+        div>p{
+            display:inline-block; /*div의 자식 p*/
+            position:absolute; /*절대 배치*/
+            height:20px;
+            width:15px;
+            background:lightgray;
+        }
+        /*div의 형태를 지정했고
+        div의 자식노드인p에대해서 형태를 지정
+        div와 자식노드인 p 모두 절대배치를 선언*/
+    </style>
+</head>
+<body>
+    <h3>Merry Chrismas!</h3>
+    <hr>
+    <p>예수님이 탄생하셨습니다.</p>
+    <div>
+        <img src="tree.png" width="200" height="200" alt="크리스마스트리">
+        <!-- 사진 추가 -->
+        <p style="left:50px; top:30px">M</p>
+        <p style="left:100px; top:0px">E</p>
+        <p style="left:100px; top:80px">R</p>
+        <p style="left:150px; top:110px">R</p>
+        <p style="left:30px; top:130px">Y</p>
+        <!-- 절대배치를 통해 M,E,R,R,Y의 위치를 지정했기 때문에
+        창의 크기가 변하더라도 M,E,R,R,Y의 위치는 고정된다.-->
+        
+    </div>
+</body>
+</html>
