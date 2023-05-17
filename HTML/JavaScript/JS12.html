@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window</title>
+    <script>
+        var name = "Hello";
+        
+        function call1(){
+            //window.location = "http://www.kopo.ac.kr";
+            window.status = "Hello, 어디에 표시되나요"; // 현재 지원안함
+            window.open("http://www.kopo.ac.kr", "newWindow", "toolbar=yes, width=20");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        call1();
+    </script><br>
+    Good...
+</body>
+</html>

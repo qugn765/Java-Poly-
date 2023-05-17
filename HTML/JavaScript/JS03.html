@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본함수 몇 가지</title>
+</head>
+<body>
+    <script>
+        name=prompt("Enter Name","홍길동");
+        /*name을 입력받는 함수*/
+        if(confirm("Continue ?\nClick Button")==true){
+            answer='true';
+        } else{
+            answer='false';
+        }
+        /*조건문을 통해서 확인/취소 버튼을 클릭한것에
+        값을 통해서 answer에 true, false를저장*/
+        alert("Name:"+name+"\nAnswer:"+answer);
+        /*Name과 Answer의 값을 호출*/
+        documnet.write("Your Name is " + answer);
+        /*이름 출력*/
+    </script>
+    
+</body>
+</html>

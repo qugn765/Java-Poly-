@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener()를 이용한 리스너 등록</title>
+    <script>
+        var p;
+        function init(){ // 문서가 완전히 로드 되었을 때 호출
+            p = document.getElementById("p");
+            p.addEventListener("mouseover",over);
+            p.addEventListener("mouseout",out);
+        } //.addEventListener함수를이용해서 ("event", 행동)
+        //event가 발생했을때 행동에있는것을 실행시킨다.
+        function over(){
+            p.style.backgroundColor="orchid";
+        }// over함수를 실행됬을때 orchid색으로 배경색변경
+        function out(){
+            p.style.backgroundColor="red";
+        }// out함수를 실행됬을때 red색으로 배경색변경
+    </script>
+</head>
+<body onload="init()"><!--완전히 로드 되었을때 함수 호출-->
+    <h3>addEventListener()를 이용한 리스너 등록</h3>
+    <hr>
+    <p id="p">마우스를 올리면 orchid색으로 변경</p>   
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 - String</title>
+    <script>
+        function call(){
+            MyString = "Hello World Welcome to my world";
+            document.write("Test1 : " + MyString.charAt(12) + "<br>");
+            //12번쨰 글자 출력
+            document.write("Test2 : " + MyString.indexOf("to") + "<br>");
+            //to의 index위치 출력
+            document.write("Test3 : " + MyString.lastIndexOf("to") + "<br>");
+            //마지막 to의 index위치 출력
+            document.write("Test4 : " + MyString.substr(6,5) + "<br>");
+            //6번째 글자부터 5글자 짜르기
+            document.write("Test5 : " + MyString.toLowerCase("AaBbCc") + "<br>");
+            //전부다 소문자로 바꾸기
+            document.write("Test6 : " + MyString.toUpperCase("AaBbCc") + "<br>");
+            //전부다 대문자로 바꾸기
+        }
+    </script>
+</head>
+<body>
+    <script>
+        call(); // 함수호출
+    </script>
+    Good..  
+</body>
+</html>

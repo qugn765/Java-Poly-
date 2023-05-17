@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+</head>
+<body>
+    <h1>반복문, FOR each문</h1>
+    <script>
+        for(i=0; i<10; i++){
+            document.write(i + " ");
+        } // 0~9까지의 값들을 출력
+
+        let arr = ["가", "나", "다", "라"]
+        for(let i  in arr){
+            console.log(i,arr[i]);
+        } // for each문으로 arr 배열에 있는 각각의 값들을
+        //console log에 값들을 출력 arr[value]했을떄
+        // key값이 없기 떄문에 0부터 순서대로 출력
+        for(let i of arr){
+            console.log(i);
+        } // for each문으로 arr 배열에 있는 각각의 값들을
+        //console log에 값들을 출력
+        let obj ={
+            a:"가",
+            b:"나",
+            c:"다",
+            d:"라"
+        } // key value를 가진배열 선언
+        for(let i in obj){
+            console.log(i,obj[i]);
+        }// for each문으로 arr 배열에 있는 각각의 값들을
+        //console log에 값들을 출력 obj[value]를 통해 key값도 출력
+    </script><br><br><br>
+
+    <h1>구구단</h1>
+    <script>
+        document.write("<H2>구구단<H2>");
+        document.write("<TABLE border=0 width=100%>");
+        for(var i=1; i < 10; i=i+3){
+            for(var j=1; j < 10; j++){
+                document.write("<TR>");
+                document.write("<TD>" + i + " * " + j + " = " + i * j + "<TD>");
+                document.write("<TD>" + (i + 1) + " * " + j + " = " + (i + 1) * j + "<TD>");
+                document.write("<TD>" + (i + 2) + " * " + j + " = " + (i + 2) * j + "<TD>");    
+            }
+        }
+        // 구구단을 출력하는 반복문
+        // i, i+1, i+2에 해당하는 구구단을 출력하고 반복문에서 i++이아닌
+        // i = i + 3을 하였기 때문에 3단씩 늘려가면서 출력
+    </script>
+    
+</body>
+</html>

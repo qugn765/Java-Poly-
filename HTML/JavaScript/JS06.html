@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산, 조건식</title>
+</head>
+<body>
+    <h1>연산식</h1>
+    <script> /*연산식*/
+        answer = 100;
+        answer += 2 * 3 - 1; // = answer + 2 * 3 - 1 이랑 동일
+        document.write(answer); 
+        document.write("<br><br>삼항 연산자<br>");
+        a = answer > 100 ? "100보다크다" : "100보다 작다";
+        // answer이 100보다 크기때문에 앞의 값인 100보다 크다를 가지게 된다.
+        document.write(a);
+    </script><br><br><br>
+
+    <h1>조건식1 if문</h1>
+    <script> // 조건식1 if문
+        number2 = 123;
+        if(number2 < 100){
+            document.write("100보다 작습니다");
+        } else if(number2 < 100 && number2 < 1000){
+            document.write("100보다 크고 1000보다 작습니다.");
+        } else {
+            document.write("1000보다 큽니다");
+        }
+        // number2에 해당하는 조건의 출력문을 출려갛는 조건문
+    </script><br><br><br>
+    
+    <h1>조건식2 switch문</h1>
+    <script> // 조건식2 switch문
+        number3=prompt("번호 입력", 1);
+        //prompt함수를 이용해서 번호를 입력받고
+        number3=parseInt(number3); //입력받은 것을 정수형으로 변환시킨다.
+        switch(number3){ //정수형으로 변환시킨것을 switch문에 넣어서 출력
+            case 1: document.write("1번을 선택하셨습니다.")// 1Link
+                break;
+            case 2: document.write("2번을 선택하셨습니다.")// 2Link
+                break;
+            case 3: document.write("3번을 선택하셨습니다.")// 3Link
+                break;
+            default: document.write("1,2,3번 모두 아닙니다.")
+                break;
+        }
+        // switch문으로 number3가 해당하는 1,2,3중에 하나의 조건을 만족한다면 출력
+        // 1,2,3 모두 없다면 default값으로 가서 출력
+    </script>
+    
+</body>
+</html>
