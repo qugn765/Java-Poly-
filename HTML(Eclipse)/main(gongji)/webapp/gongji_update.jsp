@@ -19,30 +19,40 @@ table {
 	width: 650px;
 	margin-left: 300px;
 } /*table의 형식 선언*/
+a {
+	text-decoration: none;
+}
 </style>
 <%
 request.setCharacterEncoding("UTF-8");
 %>
+<%
+int id = 0;
+try {
+	id = Integer.parseInt(request.getParameter("id"));
+} catch (Exception e) {
+	out.println("<h1>에러 발생</h1>");
+}
+%>
 <body>
-	<form method="post" action="gongji_write.jsp">
+	<form method="post" action="gongji_updatewrite.jsp">
 		<table border=1>
 			<%
 			try {
 					GongjiDao gongjiDao = new GongjiDaoImpl();
 					Gongji gongji = new Gongji();
+					gongji = gongjiDao.oneview(id);
 					Service service = new ServiceImpl();
 			%>
 			<tr>
 				<td width="100px" style="text-align: center">번호</td>
-				<td width="550px">신규(insert) : <%=gongjiDao.maxId() + 1%>번 <input
-					type="hidden" name="id" value="<%=gongjiDao.maxId() + 1%>">
-				</td>
+				<td width="550px"><%=gongji.getId()%><input type="hidden"
+					name="id" value="<%=gongji.getId()%>"></td>
 			</tr>
 			<tr>
 				<td style="text-align: center">제목</td>
 				<td><input type="text" style="width: 550px" name="title"
-					pattern="[A-Za-z0-9\uAC00-\uD7A3]+" required maxlength="10"
-					style="width:550px"></td>
+					style="width:550px" value="<%=gongji.getTitle()%>"></td>
 			</tr>
 			<tr>
 				<td style="text-align: center">날짜</td>
@@ -52,14 +62,17 @@ request.setCharacterEncoding("UTF-8");
 			<tr style="height: 400px">
 				<td style="text-align: center">내용</td>
 				<td><textarea style="height: 400px; width: 550px"
-						name="content"></textarea></td>
+						pattern="[A-Za-z0-9\uAC00-\uD7A3]+" required maxlength="10"
+						name="content"><%=gongji.getContent()%></textarea></td>
 			</tr>
 		</table>
 		<table>
 			<tr>
 				<td style="text-align: right"><a href="./gongji_list.jsp">
 						<input type="button" value="취소">
-				</a>&nbsp; <input type="submit" value="쓰기"></td>
+				</a>&nbsp;<input type="submit" value="쓰기">&nbsp; <a
+					href="./gongji_delete.jsp?id=<%=gongji.getId()%>"><input
+						type="button" value="삭제"></a></td>
 			</tr>
 		</table>
 	</form>

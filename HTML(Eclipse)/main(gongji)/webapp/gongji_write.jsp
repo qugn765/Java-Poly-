@@ -28,8 +28,14 @@ request.setCharacterEncoding("UTF-8");
 %>
 <%
 int id = 0;
+String title = "";
+String nowDate = " ";
+String content = " ";
 try {
 	id = Integer.parseInt(request.getParameter("id"));
+	title = request.getParameter("title");
+	nowDate = request.getParameter("date");
+	content = request.getParameter("content");
 } catch (Exception e) {
 	out.println("<h1>에러 발생</h1>");
 }
@@ -38,15 +44,14 @@ try {
 	<%
 	try {
 		GongjiDao gongjiDao = new GongjiDaoImpl();
-		int checkerror = gongjiDao.delete(id);
-		out.println("<h1>삭제 완료</h1>");
+		int checkerror = gongjiDao.newWrite(id, title, nowDate, content);
+		out.println("<h1>신규 생성 완료</h1>");
 	%>
 	<a href="./gongji_list.jsp"><input type="button" value="처음화면으로 가기"></a>
 	<%
 	} catch (Exception e) {
-	out.println("<h1>삭제 실패</h1>");
+	out.println("<h1>신규 생성 실패</h1>");
 	}
 	%>
-
 </BODY>
 </HTML>
